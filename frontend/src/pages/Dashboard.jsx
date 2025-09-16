@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserGroupIcon, UserPlusIcon } from '@heroicons/react/24/outline';
-import { userApi } from '../services/api';
+import { userApi } from '../services/api.js';
 
 export default function Dashboard() {
   const [stats, setStats] = useState({

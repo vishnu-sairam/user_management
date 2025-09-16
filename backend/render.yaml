@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: user-management-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        required: true
+      - key: SUPABASE_ANON_KEY
+        required: true
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        required: true
+      - key: JWT_SECRET
+        generateValue: true

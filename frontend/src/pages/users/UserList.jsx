@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { UserPlusIcon, PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline';
-import { userApi } from '../../services/api';
+import { userApi } from '../../services/api.js';
 import { toast } from 'react-hot-toast';
 
 export default function UserList() {

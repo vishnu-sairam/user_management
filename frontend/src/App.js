@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
-import UserList from './pages/users/UserList';
-import UserDetail from './pages/users/UserDetail';
-import UserForm from './pages/users/UserForm';
-import NotFound from './pages/NotFound';
+import Layout from './components/Layout.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import UserList from './pages/users/UserList.jsx';
+import UserDetail from './pages/users/UserDetail.jsx';
+import UserForm from './pages/users/UserForm.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 function App() {
   return (

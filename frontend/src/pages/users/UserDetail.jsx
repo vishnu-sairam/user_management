@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PencilIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { userApi } from '../../services/api';
+import { userApi } from '../../services/api.js';
 import { toast } from 'react-hot-toast';
 
 export default function UserDetail() {

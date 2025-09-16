@@ -1,32 +1,46 @@
 # User Management Dashboard
 
-A full-stack user management dashboard built with React, Node.js, Express, and SQLite (development) / PostgreSQL (production).
+A full-stack user management dashboard built with React, Node.js, Express, and Supabase (PostgreSQL).
 
 ## Features
 
-- **User Management**: Create, read, update, and delete users
+- **User Management**: Create, read, update, and delete users with detailed profiles
 - **Responsive Design**: Works on desktop and mobile devices
-- **Form Validation**: Client and server-side validation
+- **Form Validation**: Client and server-side validation with Formik and Yup
 - **Modern UI**: Built with Tailwind CSS and Hero Icons
 - **RESTful API**: Clean and well-documented endpoints
-- **Real-time Updates**: Automatic UI updates on data changes
+- **Real-time Data**: Powered by Supabase real-time subscriptions
+- **Secure Authentication**: JWT-based authentication
 - **Error Handling**: Comprehensive error handling and user feedback
 
 ## Tech Stack
 
-- **Frontend**: React, React Router, Axios, Formik, Yup, Tailwind CSS
-- **Backend**: Node.js, Express, Sequelize ORM
-- **Database**: 
-  - Development: SQLite
-  - Production: PostgreSQL
-- **API Documentation**: RESTful API with comprehensive documentation
-- **Development Tools**: Nodemon, Postman (for API testing)
+- **Frontend**: 
+  - React 18 with Hooks
+  - React Router v6 for navigation
+  - Formik & Yup for form handling and validation
+  - Axios for API requests
+  - Tailwind CSS for styling
+  - React Hot Toast for notifications
+
+- **Backend**: 
+  - Node.js & Express
+  - Supabase (PostgreSQL) for database
+  - JWT for authentication
+  - CORS for secure cross-origin requests
+
+- **Development Tools**:
+  - Nodemon for development server
+  - Environment variables for configuration
+  - Git for version control
 
 ## Prerequisites
 
 - Node.js (v16 or higher recommended)
 - npm (v8 or higher) or yarn
 - Git (for version control)
+- Supabase account (for database)
+- Modern web browser (Chrome, Firefox, Edge, or Safari)
 
 ## Getting Started
 
@@ -37,16 +51,31 @@ git clone https://github.com/your-username/user-management-dashboard.git
 cd user-management-dashboard
 ```
 
-### 2. Backend Setup
+### 2. Environment Setup
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
+1. Create a `.env` file in the `backend` directory with the following variables:
+   ```env
+   PORT=5000
+   NODE_ENV=development
+   
+   # Supabase Configuration
+   SUPABASE_URL=your_supabase_url
+   SUPABASE_ANON_KEY=your_supabase_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+   
+   # JWT Configuration
+   JWT_SECRET=your_secure_jwt_secret
    ```
 
-2. Install dependencies:
+2. Install backend dependencies:
    ```bash
+   cd backend
    npm install
+   ```
+
+3. Start the backend server:
+   ```bash
+   npm run dev
    ```
 
 3. Set up environment variables:

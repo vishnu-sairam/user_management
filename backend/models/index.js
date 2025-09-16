@@ -11,14 +11,26 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  // For production with PostgreSQL
+  // For production with Supabase
   const pg = require('pg');
-  sequelize = new Sequelize(process.env[config.use_env_variable], {
-    ...config,
+  const databaseUrl = process.env[config.use_env_variable] || process.env.DATABASE_URL;
+  
+  if (!databaseUrl) {
+    throw new Error('Database URL is not defined in environment variables');
+  }
+
+  sequelize = new Sequelize(databaseUrl, {
     dialect: 'postgres',
     protocol: 'postgres',
     dialectModule: pg,
-    dialectOptions: config.dialectOptions || {}
+    dialectOptions: config.dialectOptions || {},
+    logging: config.logging || false,
+    pool: config.pool || {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
   });
 } else {
   // For development with SQLite

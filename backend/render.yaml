@@ -9,11 +9,18 @@ services:
         value: production
       - key: PORT
         value: 10000
+      # Supabase Configuration
       - key: SUPABASE_URL
         required: true
       - key: SUPABASE_ANON_KEY
         required: true
       - key: SUPABASE_SERVICE_ROLE_KEY
         required: true
+      # Database Configuration
+      - key: DATABASE_URL
+        required: true
+        description: >-
+          Format: postgresql://[user]:[password]@[host]:[port]/[database]?options=...
       - key: JWT_SECRET
         generateValue: true
+        minLength: 32
